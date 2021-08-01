@@ -8,7 +8,7 @@ local scoreList13 = {
   strBr3 = {16, 6, 16, 6},
   strBr4 = {32, 12, 128, 16},
   allBr = {8, 4, 8, 4},
-  allBr1 = {12, 6, 12, 6},
+  allBr1 = {12, 6, 12, 6}, -- all bridges that looks for at least 3 cards to win.
   allBr4c = {64, 12, 64, 12},
   trpl = {16, 4, 16, 4},
   trplMix = {24, 8, 24, 8},
@@ -38,6 +38,16 @@ local scoreList13 = {
   mscHL = {32, 8, 32, 8}, -- all highs or lows
   mscP = {8, 4, 8, 4}, -- triplets and pairs
   mscIden = {16, 6, 32, 8}, -- three identical triplets
-  mscIdenA = {32, 8, 64, 12} -- three identical triplets, but that part must be fully in mixes or pures
+  mscIdenA = {32, 8, 64, 12}, -- three identical triplets, but that part must be fully in mixes or pures
+}
+
+local typeOverlap = {
+-- a list of types that cannot be awarded in conjunction with major types. ie. there are types that always follow by (a) smaller type(s), which the latter is/are removed.
+  qrepBr4 = {repBr4, allBr4c, allBr, xFull},
+  strBr4 = {allBr, xFull},
+  allBr4c = {allBr, xFull},
+  contrpl = {xNon, trpl},
+  contrplA = {xNon, trpl, tsumo},
+  contrplB = {xNon, trpl},
   
 }
