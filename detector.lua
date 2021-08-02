@@ -9,6 +9,7 @@ local concealedHand = {} -- which is a zone the respective player has.
 local hands = {}
 local concealedHand = {}
 local exposedHand = {}
+local sortedConcealed = {}
 
 -- define players' hands.
 
@@ -16,6 +17,7 @@ function triggerCalculation()
   hands = {} -- clear the hand list before starting to detect a new set of cards.
   concealedHand = {}
   exposedHand = {}
+  sortedConcealed = {}
   sortConcealedHands()
 end
 
@@ -24,14 +26,19 @@ end
 function sortConcealedHands()
  for i, obj in ipairs(concealedHandZone.getObjects()) do
     local cardCache = {}
+    local cardSepr = {}
     cardCache = obj[i].getName()
-    for g in cardCache:gmatch
-    
+    for g in (cardCache.." "):gmatch("(.-)".." ") do
+      table.insert(cardSepr, g)
+    end
+    table.insert(concealedHand, {cardSepr[1], cardSepr[2]})
  end
-    
+  table.sort(concealedHand)
+-- after the preliminary sorting, group the melds together. multiple possible outputs needed because mixes are a thing. unless mixes in such situation rather offer a better score, pure prevails. as a result, check by ascending order first.
+  
 end
 
--- insert codes to check the exposed meld zone. use points and tags.
+-- insert codes to check the exposed meld zone. use points and tags. unlike the concealed hand, it simply needs to sort by number is enough.
 function checkExposedMelds()
 
   return
