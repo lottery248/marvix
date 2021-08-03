@@ -25,6 +25,10 @@ if gx == 1 then goto case1 else goto case2 end
 
 end
 
-
-
 checkSeq({'00', '01', '02'})
+
+-- under this area, try to make a code that will group the cards by valid meld types, and put the remainder as the pair.
+
+function groupMelds(cardSample)
+ 
+end
