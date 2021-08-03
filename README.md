@@ -15,4 +15,9 @@ what1.test()
 
 The script will mainly cover buttons for scoring and to detect cards.
 
+Checklist (current):
+1. complete the meld sorter.
+2. complete configuration.
+3. sampling.
+
 https://steamcommunity.com/sharedfiles/filedetails/?id=2151704999
