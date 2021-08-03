@@ -10,7 +10,7 @@ local hands = {}
 local concealedHand = {}
 local exposedHand = {}
 local sortedConcealed = {}
-local handset17 = false -- if played in handset 17, this should be a true boolean. it will tell the system to avoid detecting the pair.
+local handset = nil -- check which handset is set.
 
 -- define players' hands.
 
@@ -19,6 +19,7 @@ function triggerCalculation()
   concealedHand = {}
   exposedHand = {}
   sortedConcealed = {}
+  handset = -- must be either 13, 16 or 17 in the current. 
   sortConcealedHands()
 end
 
@@ -41,10 +42,11 @@ end
 -- after the preliminary sorting, group the melds together. multiple possible outputs needed because mixes are a thing. unless mixes in such situation rather offer a better score, pure prevails. as a result, check by ascending order first. concealed hands must be in 3 cards except for concealed quad.
 -- there are triple, bridge, and mix. 
 function groupConcealed(cards)
-  
+  -- attempt to find a pair first.
 end
 
 -- insert codes to check the exposed meld zone. use points and tags. unlike the concealed hand, sort by number and verify if they are valid melds.
+-- triplet is either pure and mixes, quad can be in 1,2,4 colours, concealed quad and bridges can only be in 1 colour.
 function checkExposedMelds()
 
   return
