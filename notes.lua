@@ -37,7 +37,7 @@ function groupMelds(cardSample, pairFinder)
 local groupedList = {}
 local cardSample1 = nil
 cardSample1 = cardSample -- a cache that will have cards removed as the cards are being sorted.
--- attempt for find a pair before grouping. if the pairFinder number is corresponding to a nil of cardSample, then return error "unable to calculate".
+-- attempt to find a pair before grouping. if the pairFinder number is corresponding to a nil of cardSample, then return error "unable to calculate".
 if handset == 17 then goto case1
  elseif cardSample[pairFinder][1] == nil then error "unable to calculate"
  else goto case1 end
