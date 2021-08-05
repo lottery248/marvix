@@ -3,7 +3,8 @@ a major script that will be used for my own mahjong game in tabletop simulator.
 
 All scripts are made in .lua due to the fact that TTS only supports lua as a type of script.
 
-**Warning**
+**Warning** This code isn't completed.
+
 this code is primarily intended for tabletop simulator. if you use this code, you must convert the scripts like from 
 ```lua 
 what1.getAllObjects()
