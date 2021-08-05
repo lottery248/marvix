@@ -64,6 +64,17 @@ function verifyHands(cardSampleAfter, originalHand, pairNext)
 -- if it passes, combine with exposed melds and advance calculating the score.
 end
 
+
+function checkMeld(groups)
+  if #groups == 3 then goto case0
+  elseif #groups == 4 goto case1
+  else error "not a correct meld!" end
+
+::case0:: -- when this group is a 3-card meld.
+  
+  
+end
+
 groupMelds({{'a', '12'}, {'a', '12'}, {'a', '12'}, {'a', '13'}, {'a', '14'}, {'a', '14'},  {'a', '15'}, {'a', '15'}, {'a', '16'}, {'b', '00'}, {'b', '00'}, {'b', '01'}, {'b', '02'}, {'b', '03'}}, 1) -- a complete hand with a triplet of a12, a(13 14 15), a(14 15 16), b(01 02 03) and a pair of b00. expected to have an output that puts the pair of b00 at the end.
 groupMelds({{'a', '12'}, {'a', '12'}, {'a', '12'}, {'a', '13'}, {'a', '14'}, {'a', '14'},  {'a', '15'}, {'a', '15'}, {'a', '16'}, {'b', '01'}, {'b', '02'}, {'b', '02'}, {'b', '02'}, {'b', '03'}}, 1) -- same as above, but the pair has to be b02.
 
