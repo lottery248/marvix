@@ -39,21 +39,19 @@ local cardSample1 = nil
 cardSample1 = cardSample -- a cache that will have cards removed as the cards are being sorted.
 -- attempt to find a pair before grouping. if the pairFinder number is corresponding to a nil of cardSample, then return error "unable to calculate".
 if handset == 17 then goto case1
- elseif cardSample[pairFinder][1] == nil then error "unable to calculate"
+ elseif cardSample[pairFinder][1] == nil then error "can't find the pair"
  else goto case1 end
  
- ::case1:: 
--- attempt to find a pair. continue until a pair is found.
+ ::case1:: -- attempt to find a pair. continue until a pair is found.
  for i in pairs(cardSample) do
   if cardSample[i] == cardSample[i+1] then goto case2 end
  end
  
- ::case2::
--- assuming a pair is found, check how many cards left first. from case2, ensure to use cardSample1 otherwise will break the code.
+::case2:: -- assuming a pair is found, check how many cards left first. from case2, ensure to use cardSample1 otherwise will break the code. remember that handset 17 does NOT require the pair!
  if #cardSample1 % 3 ~= 0 then error "unable to calculate at checking remaining cards."
   else goto case3 end
 
- ::case3:: -- define the melds first.
+::case3:: -- define the melds first. group the melds and put them to a new array.
  
  
  verifyHands(groupedList, cardSample, pairFinder)
