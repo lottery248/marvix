@@ -66,11 +66,18 @@ end
 function checkMeld(groups)
   if #groups == 3 then goto case0
   elseif #groups == 4 then goto case1
-  else error "not a correct meld!" end
+  else error "not a meld!" end
+
+local isSequence = false
+local isTriplet = false
+local isMix = false
+local isPure = false
 
 ::case0:: -- when this group is a 3-card meld. pure triplets > mixes > bridges whenever it's valid.
 local numberOfColours = 0 -- bridges can only have one colour.
 local differentNumbers = 0 -- must be in 1 or 3.
+
+
 
 for gw in pairs(groups) do
   
