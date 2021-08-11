@@ -20,5 +20,6 @@ Checklist (current):
 1. complete the meld sorter.
 2. complete configuration.
 3. sampling.
+4. rework the code completely to use object-oriented programming instead.
 
 https://steamcommunity.com/sharedfiles/filedetails/?id=2151704999
