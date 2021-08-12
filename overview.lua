@@ -7,9 +7,9 @@ function completeHands:new (list, concealedHand, exposedHand, handset)
  setmetatable(list, self)
  self.handset = handset
  if exposedHand == {} then
-    self.hasExposure = true
-    self.exposedMeld = exposedHand
- else self.hasExposure = false end
+    self.hasExposure = false
+ else self.hasExposure = true 
+      self.exposedMeld = exposedHand end
  self.concealedHand = concealedHand
   
 end
