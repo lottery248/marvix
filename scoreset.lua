@@ -41,7 +41,7 @@ local scoreList13 = {
   'mscIdenA' = {32, 8, 64, 12}, -- three identical triplets, but that part must be fully in mixes or pures
 }
 
-local typeOverlap = {
+local typeOverlap13 = {
 -- a list of types that cannot be awarded in conjunction with major types. ie. there are types that always follow by (a) smaller type(s), which the latter is/are removed.
   'qrepBr4' = {'repBr4', 'allBr4c', 'allBr', 'xFull'},
   'strBr4' = {'allBr', 'xFull'},
