@@ -39,25 +39,4 @@ function sortConcealedHands()
   groupConcealed(concealedHand)
 end 
 
--- after the preliminary sorting, group the melds together. multiple possible outputs needed because mixes are a thing. unless mixes in such situation rather offer a better score, pure prevails. as a result, check by ascending order first. concealed hands must be in 3 cards except for concealed quad.
--- there are triple, bridge, and mix. 
-function groupConcealed(cards)
-  -- attempt to find a pair first.
-end
 
--- insert codes to check the exposed meld zone. use points and tags. unlike the concealed hand, sort by number and verify if they are valid melds.
--- triplet is either pure and mixes, quad can be in 1,2,4 colours, concealed quad and bridges can only be in 1 colour.
-function checkExposedMelds()
-
-  return
-end
-
--- return the hand after it is sorted.
-function combineHands()
-
-end
-
--- verify if all the melds are valid, otherwise check if they are either special hands or invalid hands. put error if it is neither.
-function verifyHand()
-  
-end
