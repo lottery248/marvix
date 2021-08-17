@@ -25,7 +25,7 @@ end
 
 
 -- insert codes to sort the cards in the concealed hand, after the concealed hand returns the list of cards. except for handset 17, always check the pair.
-function sortConcealedHands()
+function sortConcealedHands(objectTarget)
  for i, obj in ipairs(concealedHandZone.getObjects()) do
     local cardCache = {}
     local cardSepr = {}
@@ -36,7 +36,7 @@ function sortConcealedHands()
     table.insert(concealedHand, {cardSepr[1], cardSepr[2]})
  end
   table.sort(concealedHand)
-  groupConcealed(concealedHand)
+  objectTarget.concealedHand = concealedHand
 end 
 
 
