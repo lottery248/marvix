@@ -12,7 +12,7 @@ local exposedHand = {}
 local sortedConcealed = {}
 local handset = nil -- check which handset is set.
 
--- define players' hands.
+-- define players' hands. trigger calculation is a way to clean up the previous score calculation.
 
 function triggerCalculation()
   hands = {} -- clear the hand list before starting to detect a new set of cards.
