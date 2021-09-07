@@ -25,6 +25,7 @@ end
 
 
 -- insert codes to sort the cards in the concealed hand, after the concealed hand returns the list of cards. except for handset 17, always check the pair.
+-- remake this code to connect the object below.
 function sortConcealedHands(objectTarget)
  for i, obj in ipairs(concealedHandZone.getObjects()) do
     local cardCache = {}
@@ -38,5 +39,16 @@ function sortConcealedHands(objectTarget)
   table.sort(concealedHand)
   objectTarget.concealedHand = concealedHand
 end 
+
+-- rework the code below as object-oriented.
+function handStatus:new (handsCreated, concealedHand, exposedHand, handset)
+  handsCreated = handsCreated or {}
+  setmetatable (handsCreated, self)
+  self.__index = self
+  self.handset = handset
+  self.concealed = concealedHand
+  self.exposed = exposedHand
+  return handsCreated
+end
 
 
