@@ -23,3 +23,11 @@ Checklist (current):
 4. rework the code completely to use object-oriented programming instead.
 
 https://steamcommunity.com/sharedfiles/filedetails/?id=2151704999
+
+what does the files do?
+
+1. overview: mostly about the initialisation, copies the default values from all the files below with the changes by configuration.
+2. detector: detecting the cards within the concealed or exposed.
+3. scoreset: the default score reference.
+4. configuration: a fully-functional UI to let you configure the game rule.
+5. sorting: sorts the cards after detector, and returns the hand value.
