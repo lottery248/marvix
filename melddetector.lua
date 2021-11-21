@@ -46,7 +46,7 @@ local sortedMeldCount = 0
 for _ in pairs(sortedMeld) do sortedMeldCount = sortedMeldCount + 1 end
 if (not (sortedMeldCount == 3 or sortedMeldCount == 4)) then error case0 end
 
--- first, check if the meld is in the same colour.
-for i in pairs(sortedMeld) do
+-- first, check if the meld is in the same colour. "colours" value +1 should be the number of colours.
+for i, sortedMeldCount - 1 in pairs(sortedMeld) do
   if (not sortedMeld[i][1] == sortedMeld[i+1][1]) then colours = colours + 1
 end
