@@ -23,6 +23,28 @@ end
 
 -- remake this function here.
 
+function receiveMeldInfo()
+local sortedMeld = {}
+
+ for i, obj in ipairs(meldZone.getObjects()) do
+   local cardCache = {}
+   local cardSepr = {}
+   cardCache = obj[i].getName()
+   for g in (cardCache.." "):gmatch("(.-)".." ") do
+      table.insert(cardSepr, g)
+    end
+  table.insert(sortedMeld, {cardSepr[1], cardSepr[2]})
+  end
+ return sendMeldInfo(sortedMeld)
+
+
+
+
+-- first, check if the meld is in the same colour. "colours" value +1 should be the number of colours.
+
+
+end
+
 function sendMeldInfo(codes)
 local colours = 0
 local isSequence = false
@@ -32,6 +54,8 @@ local sortedMeldCount = 0
 local case0 = "invalid meld"
 local colourCache = {0, 0, 0, 0}
 local bridgeCache = {}
+local endpoint = 0
+
 
 -- check how many cards inside this meld
 sortedMeldCount = #codes
@@ -70,7 +94,7 @@ local seqChain = 0
   for i = 1, #numberList, 1 do
     for g = 1, #codes, 1 do
      if codes[g][2] == numberList[i] then
-       if (bridgeCache[i] == 1) then return print("invalid") 
+       if (bridgeCache[i] == 1) then return print ("invalid bridge")
       else
        bridgeCache[i] = 1
        startpoint = i
@@ -82,8 +106,11 @@ for i = startpoint, startpoint - #codes, -1 do
   if (bridgeCache[i] == 1) then
     seqChain = seqChain + 1 else break end
   end
+endpoint = startpoint
+isSequence = true
 print("sequence indicator", seqChain)
-else print("sequence indicator:", isSequence) end
+else print("sequence indicator:", isSequence)
+end
 
 --check mixes
 if (isTriplet == true and colours > 1) then
@@ -92,6 +119,13 @@ if (isTriplet == true and colours > 1) then
  elseif (sortedMeldCount == 3 and colours == 3) then
     print ("mix") 
   else print ("not mix") end
-
-
+  
+-- output the state of this meld
+if (isSequence == true) then
+  return print (sortedMeldCount, "-card bridge", "colour:", codes[1][1], "ending sequence:", endpoint - 1)
+else if (isTriplet == true) then
+  return print (sortedMeldCount, "-card triplet in", colours, " colour(s) of ", codes[1][2])
+  else error "test"
+end
+end
 end
